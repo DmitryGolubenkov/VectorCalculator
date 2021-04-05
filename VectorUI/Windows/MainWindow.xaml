@@ -142,7 +142,7 @@
                         <TextBlock>Векторное произведение</TextBlock>
                     </TabItem.Header>
                     <TabItem.Content>
-                        <TextBlock>Контент</TextBlock>
+                        <Frame Source="../Pages/CrossProduct.xaml" />
                     </TabItem.Content>
                 </TabItem>
                 <TabItem>
@@ -150,7 +150,7 @@
                         <TextBlock>Смешанное произведение</TextBlock>
                     </TabItem.Header>
                     <TabItem.Content>
-                        <TextBlock>Контент</TextBlock>
+                        <Frame Source="../Pages/TripleProduct.xaml" />
                     </TabItem.Content>
                 </TabItem>
                 <TabItem>
@@ -161,11 +161,20 @@
                         <TextBlock>Контент</TextBlock>
                     </TabItem.Content>
                 </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock>Угол между векторами</TextBlock>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Frame Source="../Pages/Angles.xaml" />
+                    </TabItem.Content>
+                </TabItem>
             </TabControl>
             <GridSplitter Grid.Column="1"
                           Width="8"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Stretch"
+                          ResizeBehavior="PreviousAndNext"
                           ShowsPreview="False" />
             <components:VectorOperationResultBlock x:Name="vectorOperationResultBlock"
                                                    Grid.Column="2"

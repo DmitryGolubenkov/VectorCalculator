@@ -11,5 +11,13 @@ namespace VectorUI
 
             return double.TryParse(text, out _);
         }
+
+        public static bool NumberIntInput(string text)
+        {
+            if (String.IsNullOrWhiteSpace(text))
+                return false;
+
+            return int.TryParse(text, out _);
+        }
     }
 }
