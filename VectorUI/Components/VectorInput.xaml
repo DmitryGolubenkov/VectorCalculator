@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="VectorUI.Components.VectorInput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VectorUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="450"
+             d:Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+    <WrapPanel  Margin="3" Grid.Row="0">
+
+            <WrapPanel.Resources>
+                
+                <Style TargetType="TextBox">
+                    <Setter Property="Height" Value="30"></Setter>
+                    <Setter Property="Width" Value="80"></Setter>
+                    <Setter Property="Margin" Value="5"></Setter>
+                    <Setter Property="TextAlignment" Value="Center"></Setter>
+                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="15"></Setter>
+                </Style>
+
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="5"></Setter>
+                    <Setter Property="FontSize" Value="15"></Setter>
+                    
+                </Style>
+
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="15"></Setter>
+                    <Setter Property="Width" Value="80"></Setter>
+                    <Setter Property="Height" Value="37"></Setter>
+
+                    <Setter Property="Margin" Value="10"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <Setter Property="Background" Value="#CCCCCC"></Setter>
+                </Style>
+            </WrapPanel.Resources>
+            <Label>X:</Label>
+            <TextBox x:Name="VectorX" TextChanged="VectorInput_TextChanged" />
+            <Label>Y:</Label>
+            <TextBox x:Name="VectorY" TextChanged="VectorInput_TextChanged"/>
+            <Label>Z:</Label>
+            <TextBox x:Name="VectorZ" TextChanged="VectorInput_TextChanged"/>
+
+            <Button Click="ClearButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="16"></Setter>
+
+                        
+                    </Style>
+                </Button.Resources>
+                Очистить
+            </Button>
+    </WrapPanel>
+    <TextBlock x:Name="ErrorText" 
+               Grid.Row="1"
+               Foreground="#FF9E0000"
+               HorizontalAlignment="Center"
+               >Тут пишется об ошибке</TextBlock>
+    </Grid>
+</UserControl>

@@ -6,13 +6,14 @@ namespace VectoLib
     {
         #region VariablesAndProperties
 
-
         public double x, y, z;
         /// <summary>
         /// Длина вектора, рассчитанная на основе координат.
         /// </summary>
         public double Length => Math.Sqrt(x * x + y * y + z * z);
 
+        public double Magnitude => Length;
+        public double sqrMagnitude => Length * Length;
 
         #endregion
 
@@ -106,8 +107,18 @@ namespace VectoLib
         /// </summary>
         public static bool operator == (Vector3 a, Vector3 b)
         {
-            if (a.x == b.x && a.y == b.y && a.z == b.z)
+            //Если оба значения - null, то идёт проверка на null. Возвращаем true.
+            if (a is null && b is null)
                 return true;
+            //Если одно значение null, то идет проверка на null, которая не проходит. Возвращаем false.
+            if (a is null || b is null)
+                return false;
+
+            //Если сравнение векторов - проверяем их координаты
+            if (a.x == b.x &&
+                a.y == b.y && a.z == b.z)
+                return true;
+
             return false;
         }
         /// <summary>
@@ -141,6 +152,26 @@ namespace VectoLib
 
         #endregion
 
+        #region DotProduct
+
+        /// <summary>
+        /// Возвращает скалярное произведение векторов a и b.
+        /// </summary>
+        public static double DotProduct(Vector3 a, Vector3 b)
+        {
+            return a * b;
+        }
+
+        /// <summary>
+        /// Возвращает скалярное произведение данного вектора и вектора other.
+        /// </summary>
+        public double DotProduct(Vector3 other)
+        {
+            return this * other;
+        }
+
+        #endregion
+
         #region CrossProduct
         /// <summary>
         /// Возвращает векторное произведение векторов a и b.
@@ -160,6 +191,19 @@ namespace VectoLib
         public Vector3 Cross(Vector3 other)
         {
             return Vector3.Cross(this, other);
+        }
+
+        #endregion
+
+        #region TripleProduct
+
+        /// <summary>
+        /// Находит смешанное произведение векторов a, b, c.
+        /// При этом скалярное произведение вектора a умножается на векторное произведение векторов b и c.
+        /// </summary>
+        public static double Triple(Vector3 a, Vector3 b, Vector3 c)
+        {
+            return a * Cross(b, c);
         }
 
         #endregion
@@ -232,19 +276,6 @@ namespace VectoLib
         }
         #endregion
 
-        #region TripleProduct
-
-        /// <summary>
-        /// Находит смешанное произведение векторов a, b, c.
-        /// При этом скалярное произведение вектора a умножается на векторное произведение векторов b и c.
-        /// </summary>
-        public static double Triple(Vector3 a, Vector3 b, Vector3 c)
-        {
-            return a * Cross(b, c);
-        }
-
-        #endregion
-
         #region Equality
         public bool Equals(Vector3 other)
         {
@@ -288,6 +319,13 @@ namespace VectoLib
         public Vector3 NormalizeMagnitude()
         {
             return this / Length;
+        }
+
+        public override string ToString()
+        {
+
+            return  "("+ x + "; " + y + "; " + z + ')';
+            
         }
     }
 }

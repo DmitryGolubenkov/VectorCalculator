@@ -1,0 +1,32 @@
+﻿<Window x:Class="VectorUI.Windows.ErrorExceptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Ошибка" Height="150" Width="350">
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" Margin="0,0,0,20">Во время выполнения программы произошла непредвиденная ошибка. Для устранения неполадки свяжитесь с разработчиком.</TextBlock>
+        <Expander Grid.Row="1" Header="Сведения для разработчика" Expanded="Expander_OnExpanded">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBox IsReadOnly="True" TextWrapping="Wrap"
+                         x:Name="ErrorTextMainTextBox" 
+                         Background="#EEEEEE"
+                         Grid.Row="0"/>
+                <TextBox Grid.Row="1" IsReadOnly="True" 
+                         Background="#EEEEEE" TextWrapping="Wrap"
+                         Margin="0,5" x:Name="StackTraceTextMainTextBox" />
+            </Grid>
+        </Expander>
+    </Grid>
+</Window>
