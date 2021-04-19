@@ -96,7 +96,14 @@
                     </Style>
                 </TabControl.Resources>
 
-
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock>Длина вектора</TextBlock>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Frame Source="../Pages/Length.xaml" />
+                    </TabItem.Content>
+                </TabItem>
                 <TabItem>
                     <TabItem.Header>
                         <TextBlock>Сложение векторов</TextBlock>
@@ -158,7 +165,7 @@
                         <TextBlock>Проекция вектора на ось</TextBlock>
                     </TabItem.Header>
                     <TabItem.Content>
-                        <TextBlock>Контент</TextBlock>
+                        <Frame Source="../Pages/Projection.xaml" />
                     </TabItem.Content>
                 </TabItem>
                 <TabItem>

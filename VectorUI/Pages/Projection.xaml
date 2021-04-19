@@ -1,0 +1,64 @@
+﻿<Page x:Class="VectorUI.Pages.Projection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:components="clr-namespace:VectorUI.Components"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:VectorUI"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Title="Sum"
+      MinWidth="300"
+      MinHeight="300"
+      d:Background="White"
+      d:DesignHeight="500"
+      d:DesignWidth="520"
+      mc:Ignorable="d">
+
+    <DockPanel Height="Auto"
+               Margin="15"
+               VerticalAlignment="Stretch"
+               LastChildFill="False">
+        <TextBlock Margin="0,10"
+                   DockPanel.Dock="Top"
+                   FontSize="30"
+                   FontWeight="SemiBold">
+            Проекция вектора на ось
+        </TextBlock>
+        <TextBlock Margin="0,10"
+                   DockPanel.Dock="Top"
+                   FontSize="14"
+                   TextAlignment="Justify"
+                   TextWrapping="Wrap" />
+        <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
+
+
+            <Label Width="180"
+                   FontSize="14"
+                   Foreground="Black">
+                Введите первый вектор:
+            </Label>
+            <components:VectorInput x:Name="VectorInput1" />
+        </WrapPanel>
+        <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Label Width="180"
+                   FontSize="14"
+                   Foreground="Black">
+                Введите второй вектор:
+            </Label>
+            <components:VectorInput x:Name="VectorInput2" />
+        </WrapPanel>
+
+        <Button Margin="0,0,0,10"
+                Padding="6"
+                HorizontalAlignment="Stretch"
+                Click="ExecuteButton_Click"
+                Content="Вычислить"
+                DockPanel.Dock="Top"
+                FontSize="15">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+    </DockPanel>
+</Page>
