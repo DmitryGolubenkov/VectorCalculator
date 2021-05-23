@@ -6,7 +6,10 @@ namespace VectoLib
     {
         #region VariablesAndProperties
 
-        public double x, y, z;
+        public double x;
+        public double y;
+        public double z;
+
         /// <summary>
         /// Длина вектора, рассчитанная на основе координат.
         /// </summary>
@@ -269,7 +272,6 @@ namespace VectoLib
         /// <summary>
         /// Возвращает вектор-проекцию вектора vector на ось axis.
         /// </summary>
-        /// TODO: Рефактор названия
         public static Vector3 ProjectVector(Vector3 vector, Vector3 axis)
         {
             return Project(vector, axis) * axis.NormalizeMagnitude();

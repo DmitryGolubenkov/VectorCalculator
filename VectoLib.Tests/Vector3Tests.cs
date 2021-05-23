@@ -50,7 +50,7 @@ namespace VectoLib.Tests
             //Тест сложения
             Assert.AreEqual(new Vector3(2,5,3), new Vector3(1,2,5)+new Vector3(1,3,-2));
             //Тест вычитания
-            Assert.AreEqual(new Vector3(2,5,3), new Vector3(1,2,5)+new Vector3(1,3,-2));
+            Assert.AreEqual(new Vector3(0,-1,7), new Vector3(1,2,5)-new Vector3(1,3,-2));
             //Тест равенства
             Assert.AreEqual(true, new Vector3(1231.232, 2321, 1231) == new Vector3(1231.232, 2321, 1231));
             Assert.AreEqual(false, new Vector3(1231.232, 2321.02, 1231) == new Vector3(1231.232, 2321, 1231));

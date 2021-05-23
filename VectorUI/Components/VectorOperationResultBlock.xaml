@@ -28,6 +28,7 @@
             </Border>
             <ScrollViewer Grid.Row="1"
                           Margin="10"
+                          AutomationProperties.AutomationId="ResultBlockHolder"
                           HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
 

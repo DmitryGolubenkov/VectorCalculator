@@ -24,14 +24,6 @@
                    TextWrapping="Wrap">
             Скалярное произведение векторов
         </TextBlock>
-        <TextBlock Margin="0,10"
-                   DockPanel.Dock="Top"
-                   FontSize="14"
-                   TextAlignment="Justify"
-                   TextWrapping="Wrap">
-            ВПИСАТЬ
-            <!--  TODO: Вписать  -->
-        </TextBlock>
         <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
 
 
